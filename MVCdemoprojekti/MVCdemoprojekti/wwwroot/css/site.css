@@ -9,15 +9,57 @@ a.navbar-brand {
 
 /* Sticky footer styles
 -------------------------------------------------- */
+/*#gradientti {
+    background-image: linear-gradient(-90deg, blue, lightblue);
+} */
+
+
 html {
-  font-size: 14px;
+    font-size: 16px;
+    
 }
 @media (min-width: 768px) {
   html {
-    font-size: 16px;
+    font-size: 18px;
+    
   }
 }
+.slidecontainer {
+    width: 100%; /*kontin ulkopuolen leveys*/
+}
 
+.slider {
+    -moz-appearance: none;
+    -webkit-appearance: none; /*syrjäyttää olemassaolevan CSS-muotoilun*/
+    /* appearance: none;             toimii joissai selaimissa, mutta ei tunnista tässä*/
+    width: 100%; /* täysi leveys*/
+    height: 25px; /*korkeus*/
+    background-image: linear-gradient(-90deg, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,0));
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s; /* 0.2 sekunnin pituinen siirtyminen hoverissa*/
+    transition: opacity .2s;
+}
+.slider:hover{
+
+    opacity: 1; /* näkyy kokonaan kun hiiren tuo päälle*/
+}
+.slider::-webkit-slider-thumb {
+        -webkit-appearance: none; /*syrjäyttää olemassaolevan CSS-muotoilun*/
+        width: 25px;
+        height: 25px;
+        background: #ffffff;
+        cursor: pointer;
+
+}
+.slidecontainer::-moz-range-thumb {
+    -moz-appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #ffffff;
+    cursor: pointer;
+}
+   
 .border-top {
   border-top: 1px solid #e5e5e5;
 }
@@ -42,8 +84,11 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    /*font-family: 'Indie Flower', cursive;*/
+    font-family: 'Lobster', cursive;
+    background-image: linear-gradient(to bottom right, turquoise, lightblue);
 }
 .footer {
   position: absolute;
