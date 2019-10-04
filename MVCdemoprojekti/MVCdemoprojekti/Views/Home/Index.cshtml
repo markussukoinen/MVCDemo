@@ -29,6 +29,24 @@
 <div class="slidercontainer">
     <input type="range" min="0" max="100" value="0" class="slider" id="volyymi" />
 </div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Yrityksen nimi</th>
+            <th>Kontaktihenkilö</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (MVCdemoprojekti.Models.Customers asiakas in ViewBag.KaikkiAsiakkaat)
+        {
+            <tr>
+                <td>@asiakas.CompanyName</td>
+                <td>@asiakas.ContactName</td>
+            </tr>
+        }
+    </tbody>
+</table>
 <div>
     @ViewBag.AsiakkaidenLkm
     @foreach (MVCdemoprojekti.Models.Customers asiakas in ViewBag.KaikkiAsiakkaat)
