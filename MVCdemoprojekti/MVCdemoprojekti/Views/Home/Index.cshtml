@@ -29,7 +29,15 @@
 <div class="slidercontainer">
     <input type="range" min="0" max="100" value="0" class="slider" id="volyymi" />
 </div>
-<!--<div onload="init();">
+<div>
+    @ViewBag.AsiakkaidenLkm
+    @foreach (MVCdemoprojekti.Models.Customers asiakas in ViewBag.KaikkiAsiakkaat)
+    {
+            <p>@asiakas.CompanyName</p>
+    }
+</div>
+<!--
+    <div onload="init();">
 
     <canvas id="demoCanvas" width="500" height="300">
     </canvas>
