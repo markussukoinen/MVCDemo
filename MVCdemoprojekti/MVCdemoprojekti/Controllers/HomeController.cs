@@ -2,14 +2,20 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MVCdemoprojekti.Models;
+
 
 namespace MVCdemoprojekti.Controllers
 {
     public class HomeController : Controller
     {
+
+
+
+       
         public IActionResult Index()
         {
             // asiakkaiden lukumäärä
@@ -23,8 +29,13 @@ namespace MVCdemoprojekti.Controllers
 
             ViewBag.KaikkiAsiakkaat = asiakkaat;
 
+            // haetaan suomalaiset asiakkaat
+            List<Customers> suomalaiset = (from c in context.Customers
+                                           where c.Country == "Finland"
+                                           select c).ToList();
+            ViewBag.KaikkiAsiakkaat = suomalaiset;
 
-
+           
             return View();
         }
 

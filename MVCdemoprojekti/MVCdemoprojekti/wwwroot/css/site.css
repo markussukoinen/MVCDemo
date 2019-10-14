@@ -28,6 +28,10 @@ html {
     width: 100%; /*kontin ulkopuolen leveys*/
 }
 
+#play-nappi {
+    color:red;
+}
+
 .slider {
     -moz-appearance: none;
     -webkit-appearance: none; /*syrjäyttää olemassaolevan CSS-muotoilun*/
