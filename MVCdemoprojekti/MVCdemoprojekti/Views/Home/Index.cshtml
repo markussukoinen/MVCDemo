@@ -21,62 +21,140 @@
         <h1 class="display-4">Pitter Patter</h1>
         <p>The time is @Kello </p>
         <!--  Default html5-soitin
-         <audio controls>
-            <source src="~/audioFiles/birdsAndCrickets.wav" />
-        </audio>
+     <audio controls>
+        <source src="~/audioFiles/birdsAndCrickets.wav" />
+    </audio>
+    -->
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <audio autoplay loop id="soitin" src="~/audioFiles/birdsAndCrickets.mp3"></audio>
+                    <div id="napit1">
+                        <!--Asettaa aluksi soittimen volan nollaan, eli vastaamaan sliderin alkuarvoa-->
+                        <script>
+                            var soitin = document.getElementById('soitin');
+
+                            soitin.volume = 0;
+
+                        </script>
+                        <!--soittimen napit: play, eli soita, ja pause, eli pysäytä tai tauko-->
+                        <button id="play-nappi" onclick="document.getElementById('soitin').play()">Play</button>
+                        <button onclick="document.getElementById('soitin').pause()">Pause</button>
+                        <!-- Tässä on volanapit, korvattu sliderilla
+        <button onclick="document.getElementById('soitin').volume -= 0.1">Vol -</button>
+        <button onclick="document.getElementById('soitin').volume += 0.1">Vol +</button>
         -->
-        <audio autoplay loop id="soitin" src="~/audioFiles/birdsAndCrickets.wav"></audio>
-        <div id="napit1">
-            <!--Asettaa aluksi soittimen volan nollaan, eli vastaamaan sliderin alkuarvoa-->
-            <script>
-                var soitin = document.getElementById('soitin');
+                        <!--Äänenvoimakkuuden slider/liukusäädin, arvot nollasta sataan, askeleen koko 1 ja alkuarvo 0. Asettaa arvon kun siihen klikataan hiirellä ja myös heti kun sen arvo muuttuu ajamalla funktion "AsetaVola1"-->
+                        <input id="vol-control1" type="range" min="0" max="100" value="0" step="1" oninput="AsetaVola1(this.value)" onchange="AsetaVola1(this.value)">
 
-                soitin.volume = 0;
 
-            </script>
-            <!--soittimen napit: play, eli soita, ja pause, eli pysäytä tai tauko-->
-            <button id="play-nappi" onclick="document.getElementById('soitin').play()">Play</button>
-            <button onclick="document.getElementById('soitin').pause()">Pause</button>
-            <!-- Tässä on volanapit, korvattu sliderilla
-            <button onclick="document.getElementById('soitin').volume -= 0.1">Vol -</button>
-            <button onclick="document.getElementById('soitin').volume += 0.1">Vol +</button> 
-            -->
-            <!--Äänenvoimakkuuden slider/liukusäädin, arvot nollasta sataan, askeleen koko 1 ja alkuarvo 0. Asettaa arvon kun siihen klikataan hiirellä ja myös heti kun sen arvo muuttuu ajamalla funktion "AsetaVola1"-->
-            <input id="vol-control1" type="range" min="0" max="100" value="0" step="1" oninput="AsetaVola1(this.value)" onchange="AsetaVola1(this.value)"> 
-            
 
-           
-            <script>
-                function AsetaVola1(val) {
-                    var soitin = document.getElementById('soitin');
-                   
-                    soitin.volume = val / 100;
-                    
-                }
-            </script>
+                        <script>
+                            function AsetaVola1(val) {
+                                var soitin = document.getElementById('soitin');
+
+                                soitin.volume = val / 100;
+
+                                document.getElementById('soitin').play();
+
+                            }
+                        </script>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <audio autoplay loop id="soitin3" src="~/audioFiles/bonfire.mp3"></audio>
+                    <div id="napit3">
+
+                        <script>
+                            var soitin = document.getElementById('soitin3');
+
+                            soitin.volume = 0;
+
+                        </script>
+
+                        <button id="play-nappi" onclick="document.getElementById('soitin3').play()">Play</button>
+                        <button onclick="document.getElementById('soitin3').pause()">Pause</button>
+
+                        <input id="vol-control1" type="range" min="0" max="100" value="0" step="1" oninput="AsetaVola3(this.value)" onchange="AsetaVola3(this.value)">
+
+
+
+                        <script>
+                            function AsetaVola3(val) {
+                                var soitin = document.getElementById('soitin3');
+
+                                soitin.volume = val / 100;
+
+                                document.getElementById('soitin3').play();
+
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <audio autoplay loop id="soitin2" src="~/audioFiles/smallBeach.mp3"></audio>
+                    <div id="napit2">
+                        <script>
+                            var soitin = document.getElementById('soitin2');
+
+                            soitin.volume = 0;
+
+                        </script>
+                        <button onclick="document.getElementById('soitin2').play()">Play</button>
+                        <button onclick="document.getElementById('soitin2').pause()">Pause</button>
+                        <input id="vol-control2" type="range" min="0" max="100" value="0" step="1" oninput="AsetaVola2(this.value)" onchange="AsetaVola2(this.value)">
+
+
+                        <script>
+                            function AsetaVola2(val) {
+                                var soitin = document.getElementById('soitin2');
+
+                                soitin.volume = val / 100;
+
+                                document.getElementById('soitin2').play();
+                            }
+                        </script>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <audio autoplay loop id="soitin4" src="~/audioFiles/rainOnConrete.mp3"></audio>
+                    <div id="napit4">
+                        <script>
+                            var soitin = document.getElementById('soitin4');
+
+                            soitin.volume = 0;
+
+                        </script>
+                        <button onclick="document.getElementById('soitin4').play()">Play</button>
+                        <button onclick="document.getElementById('soitin4').pause()">Pause</button>
+                        <input id="vol-control2" type="range" min="0" max="100" value="0" step="1" oninput="AsetaVola4(this.value)" onchange="AsetaVola4(this.value)">
+
+
+                        <script>
+                            function AsetaVola4(val) {
+                                var soitin = document.getElementById('soitin4');
+
+                                soitin.volume = val / 100;
+
+                                document.getElementById('soitin4').play();
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    Bottom Panel
+                </div>
+            </div>
         </div>
-        <audio autoplay loop id="soitin2" src="~/audioFiles/rainOnConrete.mp3"></audio>
-        <div id="napit2">
-            <script>
-                var soitin = document.getElementById('soitin2');
 
-                soitin.volume = 0;
-
-            </script>
-            <button onclick="document.getElementById('soitin2').play()">Play</button>
-            <button onclick="document.getElementById('soitin2').pause()">Pause</button>
-            <input id="vol-control2" type="range" min="0" max="100" value="0" step="1" oninput="AsetaVola2(this.value)" onchange="AsetaVola2(this.value)">
-
-
-            <script>
-                function AsetaVola2(val) {
-                    var soitin = document.getElementById('soitin2');
-
-                    soitin.volume = val / 100;
-
-                }
-            </script>
-        </div>
+       
+        
     </div>
 <!-- Tässä on muotoiltu volaslaideri, ei toiminnallisuutta tällä hetkellä.
  
